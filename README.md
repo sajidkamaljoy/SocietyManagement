@@ -1,4 +1,5 @@
 # SocietyManagement
+[![CI](https://github.com/sajidkamaljoy/SocietyManagement/actions/workflows/ci.yml/badge.svg)](https://github.com/sajidkamaljoy/SocietyManagement/actions/workflows/ci.yml)
 
 A REST API for managing a residential society (apartment building): flats, tenants, repairs, services, security staff, gate passes, announcements and rules. It is the ASP.NET final project, built as a layered ASP.NET Web API 2 solution on .NET Framework 4.7.2.
 

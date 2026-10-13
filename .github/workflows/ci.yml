@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, joy ]
+  pull_request:
+    branches: [ master, joy ]
+
+jobs:
+  build:
+    # .NET Framework 4.7.2 projects, built with msbuild on a Windows runner.
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+
+      - name: Restore
+        run: nuget restore SocietyManagement.sln
+
+      - name: Build
+        run: msbuild SocietyManagement.sln /p:Configuration=Release /m
